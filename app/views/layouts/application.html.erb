@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tickitoff</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div>
+  <% if current_user %>
+  Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% else %>
+  <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %>
+  <% end %>
+</div>
+
+<p>
+  <% if flash[:notice] %>
+      <%= flash[:notice] %>
+  <% elsif flash[:error] %>
+      <%= flash[:error] %>
+  <% elsif flash[:alert] %>
+      <%= flash[:alert] %>
+  <% end %>
+</p>
+
+<p>
+  <%= yield %>
+</p>
+
+</body>
+</html>

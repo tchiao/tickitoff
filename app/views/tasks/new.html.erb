@@ -1,0 +1,13 @@
+<%= form_for @task do |f| %>
+  <% if @task.errors.any? %>
+    <h4>There are <%= pluralize(@task.errors.count, "error") %>.</h4>
+    <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <%= f.text_field :description, placeholder: 'Description' %>
+  <%= f.submit 'Save' %>
+<% end %>
