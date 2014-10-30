@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tickitoff</title>
+  <title>Tick It Off</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,800,400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div>
+<div class="user-info">
   <% if current_user %>
-  Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  Hello <%= link_to (current_user.name || current_user.email), current_user %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% else %>
   <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %>
   <% end %>
 </div>
+<br/>
 
-<p>
+<div id="flash-container">
   <% if flash[:notice] %>
-      <%= flash[:notice] %>
+      <div class="alert alert-notice"><%= flash[:notice] %></div>
   <% elsif flash[:error] %>
-      <%= flash[:error] %>
+      <div class="alert alert-error"><%= flash[:error] %></div>
   <% elsif flash[:alert] %>
-      <%= flash[:alert] %>
+      <div class="alert alert-alert"><%= flash[:alert] %></div>
   <% end %>
-</p>
+</div>
 
 <p>
   <%= yield %>

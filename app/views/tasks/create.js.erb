@@ -1,0 +1,8 @@
+<%= render partial: 'layouts/flash.js' %>
+
+<% if @task.valid? %>
+  $('.js-tasks').append("<%= escape_javascript(render(@task)) %>");
+  $('.new-task').html("<%= escape_javascript(render partial: 'tasks/form', locals: { list: @list, task: @new_task }) %>");
+<% else %>
+  $('.new-task').html("<%= escape_javascript(render partial: 'tasks/form', locals: { list: @list, task: @task }) %> ");
+<% end %>

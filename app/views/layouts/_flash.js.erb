@@ -1,0 +1,15 @@
+<% if flash[:notice] %>
+  $("#flash-container").html('<div class="alert alert-notice"><%= flash[:notice] %></div>')
+<% elsif flash[:error] %>
+  $("#flash-container").html('<div class="alert alert-error"><%= flash[:error] %></div>')
+<% elsif flash[:alert] %>
+  $("#flash-container").html('<div class="alert alert-alert"><%= flash[:alert] %></div>')
+<% end %>
+
+$("#flash-container").show()
+
+$('document').ready(function() {
+  setTimeout(function() {
+    $('#flash-container').slideUp();
+  }, 3000);
+});

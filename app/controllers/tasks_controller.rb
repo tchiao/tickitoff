@@ -1,25 +1,59 @@
 class TasksController < ApplicationController
-
-  def index
-    @tasks = Task.all
-  end
-
-  def new
-    @task = Task.new
-  end
+  respond_to :html, :js
 
   def create
-    @task = Task.new(task_params)
+    @list = current_user.list
+    @tasks = @list.tasks
+    @task = current_user.tasks.build(task_params)
+    @task.list = @list
+    @new_task = Task.new
+
     if @task.save
-      redirect_to @task, notice: 'Your new task was saved!'
+      flash[:notice] = "Task saved!"
     else
       flash[:error] = "Sorry, there was a problem saving your task."
-      render :new
+    end
+
+    respond_with(@task) do |format|
+      format.html { redirect_to single_list_path }
     end
   end
 
-  def show
-    @task = Task.find(params[:id])
+  def edit
+    @list = current_user.list
+    @task = @list.tasks.find(params[:id])
+  end
+
+  def update
+    @list = current_user.list
+    @task = @list.tasks.find(params[:id])
+
+    if @task.update_attributes(task_params)
+      flash[:notice] = "You changed your task."
+    else
+      flash[:error] = "Oops, there was a problem."
+    end
+
+    respond_with(@task) do |format|
+      format.html { redirect_to single_list_path }
+    end
+
+  end
+
+  def destroy
+    @list = current_user.list
+    @task = @list.tasks.find(params[:id])
+
+    if @task.destroy
+      flash[:notice] = "You finished your task! Go you!"
+    else
+      flash[:error] = "Oops, there was a problem completing the task. Try again."
+    end
+
+    respond_with(@task) do |format|
+      format.html { redirect_to single_list_path }
+    end
+
   end
 
   private

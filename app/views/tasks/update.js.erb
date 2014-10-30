@@ -1,0 +1,5 @@
+<%= render partial: 'layouts/flash.js' %>
+
+<% if @task.valid? %>
+  $('#task-' +<%= @task.id %>).html("<%= escape_javascript(render(@task)) %>");
+<% end %>

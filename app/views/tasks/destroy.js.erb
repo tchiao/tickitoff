@@ -1,0 +1,5 @@
+<%= render partial: 'layouts/flash.js' %>
+
+<% if @task.destroyed? %>
+  $('#task-' +<%= @task.id %>).hide();
+<% end %>

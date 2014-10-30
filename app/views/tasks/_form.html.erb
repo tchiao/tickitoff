@@ -1,0 +1,16 @@
+<%= form_for [list, task], remote: true do |f| %>
+  <% if task.errors.any? %>
+    <h4><%= pluralize(task.errors.count, "error") %> preventing this from saving.</h4>
+    <ul>
+      <% task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+    <%= f.text_field :description, class: 'form-field', placeholder: 'Description' %>
+
+  <%= f.submit 'Save', class: 'button' %>
+
+
+<% end %>

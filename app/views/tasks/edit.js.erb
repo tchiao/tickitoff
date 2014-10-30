@@ -1,0 +1,1 @@
+$('#task-' +<%= @task.id %>).html("<%= escape_javascript(render partial: 'tasks/form', locals: { list: @list, task: @task }) %>");
