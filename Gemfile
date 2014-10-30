@@ -34,7 +34,5 @@ gem 'faker'
 
 gem 'pry'
 gem 'quiet_assets'
-gem 'carrierwave'
-gem 'mini_magick'
 gem 'devise'
 gem 'figaro'
