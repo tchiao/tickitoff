@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+ body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.home {
+  background-color: #4bd7ff;
+}
+
+.home h1 {
+  color: white;
+  text-align: center;
+}
+
+/*form {
+  margin-left:50px;
+}
+*/
+
+.form-field {
+  width:208px;
+  padding:8px 15px;
+  background:rgba(50, 50, 50, 0.2);
+  border:0px solid #dbdbdb;
+}
+
+.button {
+  position:relative;
+  padding:6px 15px;
+  left:-4px;
+  border:2px solid #207cca;
+  background-color:#207cca;
+  color:#fafafa;
+}
+.button:hover  {
+  background-color:#fafafa;
+  color:#207cca;
+}
+
+input, textarea, select, a { 
+  outline: none;
+}
+
+.user-info {
+  float:right;
+}
+
+.alert {
+  margin:auto;
+  position:relative;
+  width:75%;
+  padding:10px;
+  color:#FFFFFF;
+  text-align:center;
+}
+
+.alert-notice {
+  border: 1px solid #1dcdff;
+  background-color:#4bd7ff;
+}
+
+.alert-error {
+  border:1px solid #f78634;
+  background:#ff984c;
+}
+
+.alert-alert {
+  border: 1px solid #40eebb;
+  background-color:#73efcb;
+}
+
+.table {
+  display:table;
+  margin: 0 auto;
+}
+
+.tr {
+  display:table-row;
+}
+
+.td {
+  display:table-cell;
+  width:150px;
+  text-align: center;
+  padding-bottom:5px;
+}
+
+.task {
+  width:300px;
+  text-align: left;
+}
