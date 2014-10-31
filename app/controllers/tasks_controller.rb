@@ -29,9 +29,9 @@ class TasksController < ApplicationController
     @task = @list.tasks.find(params[:id])
 
     if @task.update_attributes(task_params)
-      flash[:notice] = "You changed your task."
+      flash[:notice] = "Task updated."
     else
-      flash[:error] = "Oops, there was a problem."
+      flash[:error] = "Oops, there was a problem updating the task. Try again."
     end
 
     respond_with(@task) do |format|
@@ -45,7 +45,8 @@ class TasksController < ApplicationController
     @task = @list.tasks.find(params[:id])
 
     if @task.destroy
-      flash[:notice] = "You finished your task! Go you!"
+      flash[:notice] = "\"#{@task.description}\" was completed. Go you!"
+
     else
       flash[:error] = "Oops, there was a problem completing the task. Try again."
     end

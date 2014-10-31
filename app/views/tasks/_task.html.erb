@@ -1,10 +1,13 @@
 <%= content_tag :div, id: "task-#{task.id}" do %>
 
-<tr>
-  <td><%= task.description %> <%= link_to "Edit", edit_list_task_path(task.list, task), remote: :true %></td>
-  <td><%= countdown(task.created_at) %> days</td>
-  <td><%= link_to "Completed", [task.list, task], method: :delete, remote: :true %></td>
-  
-</tr>
+<div class="tr">
+  <span class="td task"><%= task.description %> <%= link_to "Edit", edit_list_task_path(task.list, task), remote: :true %></span>
+  <span class="td days"><%= countdown(task.created_at) %> days</span>
+  <span class="td done">
+    <input id=<%= task.id %> type="checkbox" class="delete-box" data-list-id=<%= task.list.id %> >
+  </span>
+
+</div>
 
 <% end %>
+

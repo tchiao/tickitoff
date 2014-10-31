@@ -8,9 +8,10 @@
     </ul>
   <% end %>
 
-    <%= f.text_field :description, class: 'form-field', placeholder: 'Description' %>
+  <span class="td task"><%= f.text_field :description, class: 'form-field', placeholder: 'Enter new task here' %>
 
-  <%= f.submit 'Save', class: 'button' %>
-
+  <%= f.submit 'Save', class: 'button' %></span>
+  <span class="td days"></span>
+  <span class="td done"></span>
 
 <% end %>

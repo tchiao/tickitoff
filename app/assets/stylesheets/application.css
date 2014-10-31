@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body {
+ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -34,7 +34,7 @@ body {
 */
 
 .form-field {
-  width:25%;
+  width:208px;
   padding:8px 15px;
   background:rgba(50, 50, 50, 0.2);
   border:0px solid #dbdbdb;
@@ -43,7 +43,7 @@ body {
 .button {
   position:relative;
   padding:6px 15px;
-  left:8px;
+  left:-4px;
   border:2px solid #207cca;
   background-color:#207cca;
   color:#fafafa;
@@ -83,4 +83,25 @@ input, textarea, select, a {
 .alert-alert {
   border: 1px solid #40eebb;
   background-color:#73efcb;
+}
+
+.table {
+  display:table;
+  margin: 0 auto;
+}
+
+.tr {
+  display:table-row;
+}
+
+.td {
+  display:table-cell;
+  width:150px;
+  text-align: center;
+  padding-bottom:5px;
+}
+
+.task {
+  width:300px;
+  text-align: left;
 }

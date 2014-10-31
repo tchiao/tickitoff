@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :tasks, only: [:create, :destroy, :edit, :update]
-    # member "/list", to: :show
   end
 
   get "/list" => "lists#show", as: :single_list

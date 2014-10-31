@@ -36,3 +36,4 @@ gem 'pry'
 gem 'quiet_assets'
 gem 'devise'
 gem 'figaro'
+gem 'whenever', require: false

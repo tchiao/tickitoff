@@ -1,12 +1,22 @@
 <h1><%= @list.name %></h1>
 
-<h3>Tasks</h3>
 
-<table>
+<div class="table">
   <div class="js-tasks">
+    <div class="tr">
+      <span class="td task"><h3>Task</h3></span>
+      <span class="td day"><h3>Days Left</h3></span>
+      <span class="td done"><h3>Completed</h3></span>
+    </div>
     <%= render partial: 'tasks/task', collection: @tasks, locals: { list: @list, task: @task } %>
   </div>
-</table>
+
   <div class="new-task">
-    <%= render partial: 'tasks/form', locals: { list: @list, task: @task } %>
+    <div class="tr">
+      <%= render partial: 'tasks/form', locals: { list: @list, task: @task } %>
+
+    </div>
   </div>
+
+</div>
+
