@@ -21,7 +21,7 @@ body {
 }
 
 .home {
-  background-image: url(asset-path('tickitoff.png'));
+  background-image: image-url('tickitoff.png');
   background-repeat:no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;
