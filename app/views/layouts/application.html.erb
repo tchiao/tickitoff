@@ -2,20 +2,28 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <title>Tick It Off</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="user-info">
-  <% if current_user %>
-  Hello <%= link_to (current_user.name || current_user.email), current_user %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %>
-  <% end %>
-</div>
-<br/>
+
+<% if @no_login_bar %>
+  <div class="home-user">
+<% end %>
+
+  <div class="user-info">
+    <% if current_user %>
+    Hello <%= link_to (current_user.name || current_user.email), profile_path %>!<br> <%= link_to "Edit Profile", edit_user_registration_path %> || <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
+  </div>
+
+
+<br/><br/>
 
 <div id="flash-container">
   <% if flash[:notice] %>
@@ -26,6 +34,15 @@
       <div class="alert alert-alert"><%= flash[:alert] %></div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#flash-container').slideUp();
+  }, 1500);
+ })
+</script>
 
 <p>
   <%= yield %>

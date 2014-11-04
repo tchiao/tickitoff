@@ -1,14 +1,6 @@
 <%= form_for [list, task], remote: true do |f| %>
-  <% if task.errors.any? %>
-    <h4><%= pluralize(task.errors.count, "error") %> preventing this from saving.</h4>
-    <ul>
-      <% task.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
 
-  <span class="td task"><%= f.text_field :description, class: 'form-field', placeholder: 'Enter new task here' %>
+  <span class="td task"><%= f.text_field :description, autocomplete: "off", class: 'form-field', placeholder: 'Enter your task here' %>
 
   <%= f.submit 'Save', class: 'button' %></span>
   <span class="td days"></span>

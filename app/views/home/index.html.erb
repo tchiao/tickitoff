@@ -1,3 +1,12 @@
 <body class="home">
-<h1 class="home">Tick It Off</h1>
+
+  <h1 class="home-head">tick it off</h1>
+    <p class="home-text">
+      Your personal, self-destructing to-do list.<br/>
+      If you haven't finished it by 7 days,<br/>
+      you probably weren't going to.
+    </p>
+
+    <p><%= link_to "Sign Up", new_user_registration_path, class: 'home-button' %> or <%= link_to "Sign In", new_user_session_path, class: 'home-links' %></p>
+
 </body>

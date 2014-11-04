@@ -2,4 +2,5 @@
 
 <% if @task.valid? %>
   $('#task-' +<%= @task.id %>).html("<%= escape_javascript(render(@task)) %>");
+  $(".delete-box").click(animatedDelete);
 <% end %>

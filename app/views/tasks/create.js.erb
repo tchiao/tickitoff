@@ -7,5 +7,4 @@
   $('.new-task').html("<%= escape_javascript(render partial: 'tasks/form', locals: { list: @list, task: @task }) %> ");
 <% end %>
 
-
-$(".delete-box:last").click(animatedDelete);  
+$(".delete-box:last").click(animatedDelete);

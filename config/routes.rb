@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:update, :show]
+
+  authenticated do
+    root to: 'users#show', as: :authenticated
+  end
+
   root to: 'home#index'
 
   resources :lists do
@@ -9,5 +14,7 @@ Rails.application.routes.draw do
   end
 
   get "/list" => "lists#show", as: :single_list
+
+  get "/profile" => "users#show", as: :profile
 
 end
