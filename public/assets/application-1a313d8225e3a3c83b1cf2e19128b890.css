@@ -1,0 +1,227 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin-left:50px;
+  color:#454444;
+}
+
+.home {
+  background-image: url('/assets/tickitoff.png');
+}
+
+h1.home-head {
+  color: white;
+  font-family: Lobster;
+  font-size:90px;
+}
+
+.home-links > a {
+  color:white;
+}
+
+.home-button {
+  font-size:20px;
+  position:relative;
+  padding:10px 15px;
+  border:1px solid #ff6a32;
+  background-color:#ff6a32;
+  color:#fafafa;
+  margin-right:10px;
+}
+
+p.home-text {
+  color:white;
+  font-size:20px;
+  margin-top:-50px;
+  margin-bottom: 30px;
+}
+
+.home-links {
+  color:white;
+  margin-left:7px;
+}
+
+p {
+  font-weight: 300;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.form-font {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.reg-form-field {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.0470588) 0px 0px 0px 1px, rgba(0, 0, 0, 0.0980392) 0px 20px 20px -20px inset;
+  width:300px;
+  height:40px;
+  font-size:15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  padding:0px 10px;
+  background:white;
+  border:1px solid #dfdfdf;
+  border-radius:3px;
+  margin-top:5px;
+}
+
+.reg-button {
+  position:relative;
+  padding:6px 15px;
+  border:1px solid #00c7ff;
+  background-color:#00c7ff;
+  color:#fafafa;
+  font-size:12px;
+}
+.reg-button:hover  {
+  background-color:#4bd7ff;
+  color:#fafafa;
+}
+
+.cancel-button {
+  position:relative;
+  padding:6px 15px;
+  border:1px solid #ff6a32;
+  background-color:#ff6a32;
+  color:#fafafa;
+  font-size:12px;
+}
+
+.cancel-button:hover  {
+  background-color:#ff895e;
+  color:#fafafa;
+}
+
+
+.form-field {
+  margin-top: 5px;
+  height:30px;
+  font-size:12px;
+  width:208px;
+  padding:3px 12px;
+  background:#dfdfdf;
+  border:0px solid #dfdfdf;
+}
+
+.button {
+  position:relative;
+  height:36px;
+  padding:6px 15px;
+  left:-10px;
+  border:1px solid #00c7ff;
+  background-color:#00c7ff;
+  color:#fafafa;
+  font-size:12px;
+}
+.button:hover  {
+  background-color:#4bd7ff;
+  color:#fafafa;
+}
+
+input, textarea, select, a { 
+  outline: none;
+}
+
+.user-info {
+  float:right;
+  text-align: right;
+  margin-right:15px;
+  font-weight: 300;
+}
+
+.home-user > .user-info > a {
+  color:white;
+}
+
+
+.home-user {
+  color:#454444;
+}
+
+.alert {
+  margin:auto;
+  position:relative;
+  width:75%;
+  padding:10px;
+  color:#FFFFFF;
+  text-align:center;
+  font-weight: 300;
+}
+
+.alert-notice {
+  border: 1px solid #00c7ff;
+  background-color:#4bd7ff;
+}
+
+.alert-error {
+  border:1px solid #ff6a32;
+  background:#ff895e;
+}
+
+.alert-alert {
+  border: 1px solid #40eebb;
+  background-color:#73efcb;
+}
+
+.list-title {
+  text-align: center;
+}
+
+.table {
+  display:table;
+  margin: 0 auto;
+}
+
+.tr {
+  display:table-row;
+  font-weight: 300;
+}
+
+.td {
+  display:table-cell;
+  width:150px;
+  text-align: center;
+  padding-bottom:5px;
+}
+
+.task {
+  width:300px;
+  text-align: left;
+}
+
+.task > a {
+  color:#1dcdff;
+  text-decoration:none;
+}
+
+a {
+  color:#00c7ff;
+  text-decoration:none;
+  font-weight: 300;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.list-image {
+  text-align: center;
+}
