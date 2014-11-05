@@ -22,7 +22,6 @@
     <% end %>
   </div>
 
-
 <br/><br/>
 
 <div id="flash-container">
@@ -34,15 +33,6 @@
       <div class="alert alert-alert"><%= flash[:alert] %></div>
   <% end %>
 </div>
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-  setTimeout(function(){
-    $('#flash-container').slideUp();
-  }, 1500);
- })
-</script>
 
 <p>
   <%= yield %>
