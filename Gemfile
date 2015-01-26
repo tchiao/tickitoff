@@ -37,3 +37,4 @@ gem 'quiet_assets'
 gem 'devise'
 gem 'figaro'
 gem 'whenever', require: false
+gem 'newrelic_rpm'
