@@ -1,13 +1,17 @@
 <h2>Forgot your password?</h2>
-<p>Enter the email address associated with your account. You'll shortly receive an email with instructions for resetting your password.</p>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, class: "reg-form-field", autofocus: true %></div><br/>
+<div class="border-box">
+  <p>Enter the email address associated with your account. You'll shortly receive an email with instructions for resetting your password.</p>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.submit "Reset", class: "reg-button" %></div>
-<% end %>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, class: "reg-form-field", autofocus: true %></div><br/>
+
+    <div><%= f.submit "Reset", class: "reg-button" %></div>
+  <% end %>
+</div>
 <br/>
-
-<%= render "devise/shared/links" %>
+<div class="box-links">
+  <%= render "devise/shared/links" %>
+</div>

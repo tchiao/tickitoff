@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
   has_one :list, dependent: :destroy
   has_many :tasks, dependent: :destroy
+  validates_uniqueness_of :username
 end

@@ -1,17 +1,21 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, class: "reg-form-field" %></div><br>
+<div class="border-box">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, class: "reg-form-field" %></div><br>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "reg-form-field" %></div>
+    <div><%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "reg-form-field" %></div>
 
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
+    <% if devise_mapping.rememberable? -%>
+      <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <% end -%>
 
-  <div><%= f.submit "Log in", class: "reg-button" %></div>
-<% end %>
+    <div><%= f.submit "Log in", class: "reg-button" %></div>
+  <% end %>
+</div>
 </br>
-<%= render "devise/shared/links" %>
+<div class="box-links">
+  <%= render "devise/shared/links" %>
+</div>
