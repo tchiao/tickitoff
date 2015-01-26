@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   after_filter { flash.discard if request.xhr? }
 
   def after_sign_in_path_for(resource)
-    resource
+    profile_path
   end
 
   protected
