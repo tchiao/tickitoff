@@ -1,0 +1,1 @@
+var animatedDelete=function(){var t=$(this).attr("id"),e=$(this).data("list-id"),a="/lists/"+e+"/tasks/"+t+".js";setTimeout(function(){$.ajax(a,{type:"DELETE"})},500)};$(document).ready(function(){$(".delete-box").click(animatedDelete)});
