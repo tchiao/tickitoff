@@ -32,11 +32,11 @@
 
 <div id="flash-container">
   <% if flash[:notice] %>
-      <div class="alert alert-notice"><%= flash[:notice] %></div>
+      <div class="alert alert-notice"><%= flash[:notice] unless notice.blank? %></div>
   <% elsif flash[:error] %>
-      <div class="alert alert-error"><%= flash[:error] %></div>
+      <div class="alert alert-error"><%= flash[:error] unless error.blank? %></div>
   <% elsif flash[:alert] %>
-      <div class="alert alert-alert"><%= flash[:alert] %></div>
+      <div class="alert alert-alert"><%= flash[:alert] unless alert.blank? %></div>
   <% end %>
 </div>
 
