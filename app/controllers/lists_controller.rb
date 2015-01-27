@@ -27,8 +27,10 @@ class ListsController < ApplicationController
 
   def update
     @list = List.friendly.find(params[:id])
-
+    @list.slug = nil
     if @list.update_attributes(list_params)
+      
+      @list.friendly_id
       flash[:notice] = "List updated."
     else
       flash[:error] = "Oops, there was a problem updating the list. Try again."
