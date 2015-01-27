@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  respond_to :html, :js
 
   def create
     @list = List.new(list_params)
@@ -7,7 +8,7 @@ class ListsController < ApplicationController
 
     if @list.save
       flash[:notice] = "List was saved"
-      redirect_to single_list_path
+      redirect_to list_path(@list)
     else
       flash[:error] = "There was a problem saving your list."
       render :new
@@ -15,16 +16,36 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = current_user.list
+    @list = List.friendly.find(params[:id])
     @tasks = @list.tasks.all
     @task = @list.tasks.new
   end
 
+  def edit
+    @list = List.friendly.find(params[:id])
+  end
+
+  def update
+    @list = List.friendly.find(params[:id])
+
+    if @list.update_attributes(list_params)
+      flash[:notice] = "List updated."
+    else
+      flash[:error] = "Oops, there was a problem updating the list. Try again."
+    end
+
+    respond_with(@list) do |format|
+      format.html { redirect_to profile_path }
+    end
+
+  end
+
+
   def destroy
-    @list = current_user.list
+    @list = List.friendly.find(params[:id])
     if @list.destroy
       flash[:notice] = "\"#{@list.name}\" was deleted."
-      redirect_to current_user
+      redirect_to profile_path
     else
       flash[:error] = "There was an error deleting your list."
       render :show

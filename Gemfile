@@ -38,3 +38,4 @@ gem 'devise'
 gem 'figaro'
 gem 'whenever', require: false
 gem 'newrelic_rpm'
+gem 'friendly_id', '~> 5.1.0'

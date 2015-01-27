@@ -14,12 +14,10 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     # @user = User.find(params[:id])
-    if @user.list
-      @list = @user.list
-    else
-      @list = List.new
+    if @user.lists
+      @lists = @user.lists
     end
-
+    @list = List.new
   end
 
   private

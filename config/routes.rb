@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     resources :tasks, only: [:create, :destroy, :edit, :update]
   end
 
-  get "/list" => "lists#show", as: :single_list
-
   get "/profile" => "users#show", as: :profile
 
 end

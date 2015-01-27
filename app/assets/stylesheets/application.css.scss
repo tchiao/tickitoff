@@ -126,6 +126,15 @@ input:-webkit-autofill {
   border:0px solid #dfdfdf;
 }
 
+.list-info {
+  margin:10px;
+}
+
+.list-form {
+  width:200px;
+  margin-top:0;
+}
+
 .button {
   position:relative;
   height:36px;
@@ -228,8 +237,16 @@ a {
   display: inline;
 }
 
+.all-lists {
+  margin:0 auto;
+  text-align:center;
+}
+
 .list-image {
   text-align: center;
+  display:inline-block;
+  margin:10px;
+  vertical-align:top;
 }
 
 .border-box {

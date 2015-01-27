@@ -1,0 +1,5 @@
+<%= render partial: 'layouts/flash.js' %>
+
+<% if @list.valid? %>
+  $('#list-' +<%= @list.id %>).html("<%= escape_javascript(render(@list)) %>");
+<% end %>

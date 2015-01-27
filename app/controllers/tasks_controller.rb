@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   respond_to :html, :js
 
   def create
-    @list = current_user.list
+    @list = List.friendly.find(params[:list_id])
     @tasks = @list.tasks
     @task = current_user.tasks.build(task_params)
     @task.list = @list
@@ -15,17 +15,17 @@ class TasksController < ApplicationController
     end
 
     respond_with(@task) do |format|
-      format.html { redirect_to single_list_path }
+      format.html { redirect_to @list }
     end
   end
 
   def edit
-    @list = current_user.list
+    @list = List.friendly.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
   end
 
   def update
-    @list = current_user.list
+    @list = List.friendly.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
 
     if @task.update_attributes(task_params)
@@ -35,13 +35,13 @@ class TasksController < ApplicationController
     end
 
     respond_with(@task) do |format|
-      format.html { redirect_to single_list_path }
+      format.html { redirect_to @list }
     end
 
   end
 
   def destroy
-    @list = current_user.list
+    @list = List.friendly.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
 
     if @task.destroy
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
     end
 
     respond_with(@task) do |format|
-      format.html { redirect_to single_list_path }
+      format.html { redirect_to @list }
     end
 
   end
