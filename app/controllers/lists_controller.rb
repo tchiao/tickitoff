@@ -7,7 +7,6 @@ class ListsController < ApplicationController
     @list.user = current_user
 
     if @list.save
-      flash[:notice] = "List was saved"
       redirect_to list_path(@list)
     else
       flash[:error] = "There was a problem saving your list."
@@ -29,9 +28,7 @@ class ListsController < ApplicationController
     @list = List.friendly.find(params[:id])
     @list.slug = nil
     if @list.update_attributes(list_params)
-      
       @list.friendly_id
-      flash[:notice] = "List updated."
     else
       flash[:error] = "Oops, there was a problem updating the list. Try again."
     end

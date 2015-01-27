@@ -5,7 +5,7 @@
     <% @lists.each do |list| %>
     <div class="list-image">
       <%= link_to list_path(list) do %>
-        <%= image_tag("/images/todo.png") %>
+        <%= image_tag("/images/to-do.png") %>
       <% end %>
       <br/>
       <div class="list-info"><%= content_tag :div, id: "list-#{list.id}" do %><%= list.name %><br/><% end %>
