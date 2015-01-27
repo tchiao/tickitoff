@@ -120,7 +120,7 @@ input:-webkit-autofill {
   margin-top: 5px;
   height:30px;
   font-size:14px;
-  width:208px;
+  width:260px;
   padding:3px 12px;
   background:#dfdfdf;
   border:0px solid #dfdfdf;
@@ -135,6 +135,7 @@ input:-webkit-autofill {
   background-color:#00c7ff;
   color:#fafafa;
   font-size:14px;
+  margin-top:1px;
 }
 .button:hover  {
   background-color:#4bd7ff;
@@ -208,7 +209,7 @@ input, textarea, select, a {
 }
 
 .task {
-  width:300px;
+  width:400px;
   text-align: left;
 }
 
