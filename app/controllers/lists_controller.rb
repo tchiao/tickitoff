@@ -50,7 +50,7 @@ class ListsController < ApplicationController
       flash[:notice] = "\"#{@list.name}\" was deleted."
       redirect_to profile_path
     else
-      flash[:error] = "There was an error deleting your list."
+      flash.now[:error] = "There was an error deleting your list."
       render :show
     end
   end
