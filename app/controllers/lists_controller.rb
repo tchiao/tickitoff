@@ -10,10 +10,9 @@ class ListsController < ApplicationController
       redirect_to list_path(@list)
     else
       flash[:error] = "There was a problem saving your list."
-    end
-
-    respond_with(@list) do |format|
-      format.html { redirect_to profile_path }
+      respond_with(@list) do |format|
+        format.html { redirect_to profile_path }
+      end
     end
 
   end
